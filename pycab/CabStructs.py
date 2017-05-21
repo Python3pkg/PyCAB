@@ -51,11 +51,10 @@ class BYTEValue(object):
             raise ValueError("Only BYTE values are allowed: %02x" % value)
 
 
-class CABFileFormat(object):
+class CABFileFormat(object, metaclass=ABCMeta):
     """
     It provides a common set of methods for managing cabs
     """
-    __metaclass__ = ABCMeta
 
     @abstractmethod
     def get_cfheader(self):

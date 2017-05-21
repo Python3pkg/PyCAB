@@ -1,6 +1,6 @@
 import os
 
-from CabReader import CabReader
+from .CabReader import CabReader
 from pycab.CabWriter import CABSet
 
 

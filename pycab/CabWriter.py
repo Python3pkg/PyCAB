@@ -7,7 +7,7 @@ This code attemps to create valid .CAB SET files.
 import os
 from itertools import groupby
 
-from Utils import Utils
+from .Utils import Utils
 from pycab.CabStructs import CABFileFormat, CFHEADER, CFFOLDER, CFFILE, CFDATA
 
 

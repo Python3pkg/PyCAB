@@ -4,15 +4,13 @@ from abc import ABCMeta, abstractmethod
 import os
 import hashlib
 
-from Utils import Utils
-from CabReader import CabReader
-from CabWriter import CABException, CABFolderUnit
+from .Utils import Utils
+from .CabReader import CabReader
+from .CabWriter import CABException, CABFolderUnit
 from pycab.CabStructs import CFHEADER, CFFILE, CFDATA
 
 
-class Extraction(object):
-
-    __metaclass__ = ABCMeta
+class Extraction(object, metaclass=ABCMeta):
 
     @abstractmethod
     def extract(self, cab):
@@ -33,7 +31,7 @@ class Extraction(object):
             i += 1
 
     def _get_folder_name(self):
-        return self.__folder_name.next()
+        return next(self.__folder_name)
 
 class SimpleExtraction(Extraction):
 

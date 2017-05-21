@@ -24,7 +24,7 @@ class Utils(object):
 
     @staticmethod
     def get_random_unicode_name(size):
-        return "".join([unichr(random.choice((0x300, 0x2000)) + random.randint(0, 0xff)) for _ in range(size)])
+        return "".join([chr(random.choice((0x300, 0x2000)) + random.randint(0, 0xff)) for _ in range(size)])
 
     @staticmethod
     def get_hashes_of_files(file_list):

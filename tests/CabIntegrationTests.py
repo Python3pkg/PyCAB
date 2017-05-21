@@ -29,8 +29,8 @@ class IntegrationTestcase(unittest.TestCase):
         extractor.extract(r"./TestsFiles/my_cab_0.cab")
 
         # Check hashes
-        extracted_hash_set = set([v for k, v in extractor.get_hashes_of_files().items()])
-        files_hash_set = set([v for k, v in Utils.get_hashes_of_files(folder1.filename_list).items()])
+        extracted_hash_set = set([v for k, v in list(extractor.get_hashes_of_files().items())])
+        files_hash_set = set([v for k, v in list(Utils.get_hashes_of_files(folder1.filename_list).items())])
 
         self.assertEquals(extracted_hash_set, files_hash_set)
         # Cleanup
@@ -57,8 +57,8 @@ class IntegrationTestcase(unittest.TestCase):
         extractor.extract(r"./TestsFiles/my_cab_0.cab")
 
         # Check hashes
-        extracted_hash_set = set([v for k, v in extractor.get_hashes_of_files().items()])
-        files_hash_set = set([v for k, v in Utils.get_hashes_of_files(folder1.filename_list + folder2.filename_list + folder3.filename_list).items()])
+        extracted_hash_set = set([v for k, v in list(extractor.get_hashes_of_files().items())])
+        files_hash_set = set([v for k, v in list(Utils.get_hashes_of_files(folder1.filename_list + folder2.filename_list + folder3.filename_list).items())])
 
         self.assertEquals(extracted_hash_set, files_hash_set)
         # Cleanup
@@ -82,8 +82,8 @@ class IntegrationTestcase(unittest.TestCase):
         extractor.extract(r"./TestsFiles/my_cab_0.cab")
 
         # Check hashes
-        extracted_hash_set = set([v for k, v in extractor.get_hashes_of_files().items()])
-        files_hash_set = set([v for k, v in Utils.get_hashes_of_files(folder1.filename_list + folder2.filename_list).items()])
+        extracted_hash_set = set([v for k, v in list(extractor.get_hashes_of_files().items())])
+        files_hash_set = set([v for k, v in list(Utils.get_hashes_of_files(folder1.filename_list + folder2.filename_list).items())])
 
         # Check hashes
         self.assertEquals(extracted_hash_set, files_hash_set)
